@@ -1,0 +1,18 @@
+CREATE TABLE `Appointments` (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`userId`	TEXT,
+	`title`	TEXT,
+	`startDate`	TEXT,
+	`endDate`	TEXT,
+	`priority`	TEXT,
+	`color`	TEXT,
+	FOREIGN KEY(`userId`) REFERENCES `Users`(`userID`)
+);
+
+CREATE TABLE `Users` (
+	`userID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`email`	TEXT NOT NULL UNIQUE,
+	`firstname`	TEXT NOT NULL,
+	`lastname`	INTEGER,
+	`password`	TEXT NOT NULL
+);
